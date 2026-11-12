@@ -1,27 +1,11 @@
 
 import type { ReactElement } from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
-import type { NativeStackScreenProps } from '@react-navigation/native-stack';
-import type { RootStackParamList } from '../types/navigation';
+import { View, Text, StyleSheet } from 'react-native';
 
-// This defines the navigation properties of the HomeScreen component.
-type HomeScreenProps = NativeStackScreenProps<
-  RootStackParamList,
-  'Home'
->;
-
-export default function HomeScreen({
-  navigation,
-}: HomeScreenProps): ReactElement {
+export default function HomeScreen(): ReactElement {
   return (
     <View style={styles.container}>
       <Text>Home Screen</Text>
-
-      <Button
-        title="Go to Second Screen"
-        // This opens the SecondScreen view.
-        onPress={() => navigation.navigate('Second')}
-      />
     </View>
   );
 }
@@ -31,6 +15,5 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    gap: 20,
   },
 });
