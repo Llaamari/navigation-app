@@ -1,6 +1,7 @@
 
 import type { ReactElement } from 'react';
 import { Appbar } from 'react-native-paper';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import type { NativeStackHeaderProps } from '@react-navigation/native-stack';
 
 export default function CustomAppBar({
@@ -23,7 +24,14 @@ export default function CustomAppBar({
             {/* If the “Back” button is missing, an arrow pointing to the right is displayed */}
             {!back ? (
                 <Appbar.Action
-                    icon="arrow-right"
+                    // Use the MaterialCommunityIcons component directly
+                    icon={({ size, color }) => (
+                        <MaterialCommunityIcons
+                            name="arrow-right"
+                            size={size}
+                            color={color}
+                        />
+                    )}
                     onPress={() => navigation.navigate('Second')}
                 />
             ) : null}
